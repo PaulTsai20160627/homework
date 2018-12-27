@@ -3,15 +3,20 @@ package com.train
 import java.util.*
 
 fun main(args: Array<String>) {
-    val scanner = Scanner(System.`in`)
-    println("Please enter number of tickets :")
-    var NumbersOfTotalTicket = scanner.nextInt()
-    println("How many round-trip tickets :")
-    var NumbersOfReturnTicket = scanner.nextInt()
-    val Ticket  = Ticket1(NumbersOfTotalTicket,NumbersOfReturnTicket)
-    println("Total tickets: $NumbersOfTotalTicket\n" +
-            "Round-trip: $NumbersOfReturnTicket\n" +
-            "Total: ${Ticket.TotalAmount()}")
+    var NumbersOfTotalTicket :Int = 0
+    while(NumbersOfTotalTicket!=-1){
+        val scanner = Scanner(System.`in`)
+        println("Please enter number of tickets :")
+        NumbersOfTotalTicket = scanner.nextInt()
+        if(NumbersOfTotalTicket==-1) break
+        println("How many round-trip tickets :")
+        var NumbersOfReturnTicket = scanner.nextInt()
+        val Ticket  = Ticket1(NumbersOfTotalTicket,NumbersOfReturnTicket)
+        println("Total tickets: $NumbersOfTotalTicket\n" +
+                "Round-trip: $NumbersOfReturnTicket\n" +
+                "Total: ${Ticket.TotalAmount()}")
+    }
+
 }
 
 
